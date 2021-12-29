@@ -1,0 +1,50 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #121212;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon {
+    opacity: 87%;
+}
+
+#header {
+    display: flex;
+    gap: 10px;
+    background-color: #181818;
+    color: rgba(255, 255, 255, 87%);
+    padding: 10px;
+}
+
+#sidebar {
+    background-color: #242424;
+    color: rgba(255, 255, 255, 87%);
+    width: 20vw;
+    height: 91vh;
+    padding: 5vh 2vw 2vh 2vw;
+}
+
+.sidebar-container {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.sidebar-container:hover {
+    cursor: pointer;
+    background-color: #363636;
+}
+
+.sidebar-text {
+    margin-top: 5px;
+}
+
+#plus-button {
+    opacity: 87%;
+}
