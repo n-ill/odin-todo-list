@@ -90,14 +90,14 @@ html {
     outline: none;
 }
 
-.x-icon {
+#x-icon {
     height: 16px;
     width: 16px;
     align-self: flex-end;
     margin-bottom: 10px;
 }
 
-.x-icon:hover {
+#x-icon:hover {
     cursor: pointer;
     background-color: #606060;
 }

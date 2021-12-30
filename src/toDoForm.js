@@ -10,7 +10,8 @@ function createToDoForm() {
 
     let closeX = document.createElement('img');
     closeX.src = xIcon;
-    closeX.className = 'x-icon icon';
+    closeX.className = 'icon';
+    closeX.id = 'x-icon'
 
     let title = document.createElement('input');
     title.className = 'form-text-input';
