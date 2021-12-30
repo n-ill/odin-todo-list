@@ -1,9 +1,9 @@
 import xIcon from './x-icon.png';
 
-function createToDoForm() {
+const toDoForm = () => {
     const gridContainer = document.querySelector('#grid-container');
 
-    let toDoForm = document.createElement('div');
+    let toDoForm = document.createElement('form');
     toDoForm.id = 'to-do-form';
     toDoForm.style.gridRow = '3/4';
     toDoForm.style.gridColumn = '3/4';
@@ -17,10 +17,11 @@ function createToDoForm() {
     title.className = 'form-text-input';
     title.setAttribute('type', 'text');
     title.placeholder = 'Title...';
+    title.required = true;
 
     let description = document.createElement('textarea');
     description.className = 'form-text-input';
-    description.placeholder = 'Description...';
+    description.placeholder = 'Description (optional)...';
     description.style.resize = 'none';
     description.rows = '3';
 
@@ -28,6 +29,7 @@ function createToDoForm() {
     date.setAttribute('type', 'date');
     date.className = 'form-text-input';
     date.style.marginBottom = '40px';
+    date.required = true;
 
     let prioContainer = document.createElement('div');
     prioContainer.id = 'priority-container';
@@ -42,6 +44,7 @@ function createToDoForm() {
     lowPrio.setAttribute('type', 'radio');
     lowPrio.name = 'priority';
     lowPrio.id = 'low-priority';
+    lowPrio.required = true;
 
     let medPrioText = document.createElement('div');
     medPrioText.textContent = 'MEDIUM:';
@@ -71,14 +74,18 @@ function createToDoForm() {
     let submitButton = document.createElement('input');
     submitButton.setAttribute('type', 'submit');
 
-    toDoForm.appendChild(closeX);
-    toDoForm.appendChild(title);
-    toDoForm.appendChild(description);
-    toDoForm.appendChild(date);
-    toDoForm.appendChild(prioContainer);
-    toDoForm.appendChild(submitButton);
+    const createToDoForm = () => {
+        toDoForm.appendChild(closeX);
+        toDoForm.appendChild(title);
+        toDoForm.appendChild(description);
+        toDoForm.appendChild(date);
+        toDoForm.appendChild(prioContainer);
+        toDoForm.appendChild(submitButton);
 
-    gridContainer.appendChild(toDoForm);
+        gridContainer.appendChild(toDoForm);
+    }
+
+    return { createToDoForm }
 }
 
-export { createToDoForm }
+export { toDoForm }
