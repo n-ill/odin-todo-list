@@ -6,14 +6,15 @@
 html {
     background-color: #121212;
     font-family: Arial, Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 87%);
 }
 
 #grid-container {
     display: grid;
     height: 100vh;
     width: 100vw;
-    grid-template-columns: 25% 65% 10%;
-    grid-template-rows: 10% 75% 15%;
+    grid-template-columns: 20% 15% 40% 15% 10%;
+    grid-template-rows: 10% 15% 45% 15% 15%;
 }
 
 .icon {
@@ -21,20 +22,17 @@ html {
 }
 
 #header {
-    grid-column: 1 / 4;
+    grid-column: 1 / 6;
     display: flex;
     align-items: center;
     gap: 10px;
     background-color: #181818;
-    color: rgba(255, 255, 255, 87%);
     padding: 10px;
 }
 
 #sidebar {
-    grid-row: 2 / 4;
+    grid-row: 2 / 6;
     background-color: #242424;
-    color: rgba(255, 255, 255, 87%);
-    /* height: 75vh; */
     padding: 5vh 2vw 2vh 2vw;
 }
 
@@ -55,14 +53,70 @@ html {
     margin-top: 5px;
 }
 
-#plus-button {
-    grid-row: 3 / 4;
-    grid-column: 3 / 4;
+#plus-button-container {
+    grid-row: 5 / 6;
+    grid-column: 5 / 6;
     opacity: 87%;
 }
 
+#plus-button:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
 #main-area {
+    grid-column: 2 / 6;
+    grid-row: 2 / 6;
+}
+
+#to-do-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #242424;
+    padding: 20px;
+}
+
+.form-text-input {
+    background-color: #242424;
+    color: rgba(255, 255, 255, 75%);
+    border: none;
+    border-bottom: 3px solid #363636;
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form-text-input:focus {
+    outline: none;
+}
+
+.x-icon {
+    height: 16px;
+    width: 16px;
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.x-icon:hover {
+    cursor: pointer;
+    background-color: #606060;
+}
+
+input[name=priority] {
+    opacity: 87%;
+}
+
+input[type=submit] {
+    width: 75px;
+    align-self: flex-end;
+    background-color: #242424;
+    border: 3px solid #484848;
     color: rgba(255, 255, 255, 87%);
-    grid-column: 2 / 4;
-    grid-row: 2 / 4;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    background-color: #363636;
 }
