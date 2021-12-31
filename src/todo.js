@@ -6,3 +6,5 @@ const toDo = (title, description, dueDate, priority) => {
 
     return { getTitle, getDescription, getDueDate, getPriority }
 }
+
+export { toDo }

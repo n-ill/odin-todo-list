@@ -14,7 +14,7 @@ html {
     height: 100vh;
     width: 100vw;
     grid-template-columns: 20% 15% 40% 15% 10%;
-    grid-template-rows: 10% 15% 45% 15% 15%;
+    grid-template-rows: 10% 15% 50% 15% 150%;
 }
 
 .icon {
@@ -65,15 +65,18 @@ html {
 }
 
 #main-area {
-    grid-column: 2 / 6;
-    grid-row: 2 / 6;
+    grid-column: 2 / 5;
+    grid-row: 2 / 5;
+    margin: 100px 25px 0px 100px;
 }
 
 #to-do-form {
-    display: flex;
+    display: none;
     flex-direction: column;
     background-color: #242424;
     padding: 20px;
+    grid-column: 3/4;
+    grid-row: 3/4;
 }
 
 .form-text-input {
@@ -119,4 +122,27 @@ input[type=submit] {
 
 input[type=submit]:hover{
     background-color: #363636;
+}
+
+.to-do {
+    background-color: #242424;
+    display: grid;
+    grid-template-columns: 5% 30% 55% 10%;
+}
+
+.todo-prio {
+    grid-column: 1/2;
+    background-color: green;
+}
+
+.title {
+    grid-column: 2/3;
+}
+
+.description {
+    grid-column: 3/4;
+}
+
+.date {
+    grid-column: 4/5;
 }
