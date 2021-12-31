@@ -23,6 +23,7 @@ const backgroundBlur = () => {
         document.querySelector('#plus-button-container').style.filter = 'blur(5px)';
         document.querySelector('#header').style.filter = 'blur(5px)';
         document.querySelector('#sidebar').style.filter = 'blur(5px)';
+        // document.querySelectorAll('.to-do').forEach(item => {item.style.filter = 'blur(5px)'});
         aboveFormRow.style.filter = 'blur(5px)';
         belowFormRow.style.filter = 'blur(5px)';
         leftFormColumn.style.filter = 'blur(5px)';
@@ -33,6 +34,7 @@ const backgroundBlur = () => {
         document.querySelector('#plus-button-container').style.filter = 'blur(0px)';
         document.querySelector('#header').style.filter = 'blur(0px)';
         document.querySelector('#sidebar').style.filter = 'blur(0px)';
+        // document.querySelectorAll('.to-do').forEach(item => {item.style.filter = 'blur(0px)'});
         aboveFormRow.style.filter = 'blur(0px)';
         belowFormRow.style.filter = 'blur(0px)';
         leftFormColumn.style.filter = 'blur(0px)';

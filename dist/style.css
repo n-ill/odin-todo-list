@@ -67,7 +67,7 @@ html {
 #main-area {
     grid-column: 2 / 5;
     grid-row: 2 / 5;
-    margin: 100px 25px 0px 100px;
+    margin: 50px 25px 0px 100px;
 }
 
 #to-do-form {
@@ -128,11 +128,23 @@ input[type=submit]:hover{
     background-color: #242424;
     display: grid;
     grid-template-columns: 5% 30% 55% 10%;
+    margin-bottom: 20px;
 }
 
 .todo-prio {
     grid-column: 1/2;
+}
+
+.low-prio {
     background-color: green;
+}
+
+.med-prio {
+    background-color: yellow;
+}
+
+.high-prio {
+    background-color: red;
 }
 
 .title {
@@ -145,4 +157,7 @@ input[type=submit]:hover{
 
 .date {
     grid-column: 4/5;
+}
+.section-title {
+    margin-bottom: 50px;
 }

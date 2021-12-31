@@ -29,13 +29,17 @@
                 <img class="icon" src="week-icon.png" alt="week icon">
                 <div class="sidebar-text">WEEK</div>
             </div>
+            <div id="add-new-project" class="sidebar-container">
+                <div class="sidebar-text">ADD NEW PROJECT</div>
+            </div>
         </div>
         <div id="plus-button-container">
             <img id="plus-button" src="plus.png" alt="blue circle white plus button">
         </div>
         <div id="main-area">
-            <div class="to-do">
-                <div class="todo-prio"></div>
+            <h2 class="section-title">HOME</h2>
+            <div class="home to-do">
+                <div class="todo-prio low-prio"></div>
                 <div class="title">Appointment</div>
                 <div class="description">555 w street dr appt</div>
                 <div class="date">5/5/2022</div>
@@ -47,11 +51,11 @@
             <textarea id="form-description" class="form-text-input" placeholder="Description (optional)"></textarea>
             <input type="date" id="form-date" class="form-text-input" required>
             <label for="low">LOW</label>
-            <input type="radio" name="form-priority" id="low" required>
+            <input type="radio" name="form-priority" id="low" value="low" required>
             <label for="medium">MEDIUM</label>
-            <input type="radio" name="form-priority" id="medium">
+            <input type="radio" name="form-priority" id="medium" value="medium">
             <label for="high">HIGH</label>
-            <input type="radio" name="form-priority" id="high">
+            <input type="radio" name="form-priority" id="high" value="high">
             <input type="submit" id="submit-button">
         </form>
     </div>
