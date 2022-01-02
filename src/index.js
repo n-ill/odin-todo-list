@@ -1,6 +1,6 @@
 import { events } from './events.js';
 import { toDo } from './toDo.js';
-import {createToDoDOM} from './createToDoDOM';
+import { createToDoDOM } from './createToDoDOM';
 
 let projects = { 'home': [] };
 let currentProject = 'home';
@@ -14,24 +14,49 @@ window.formSubmit = function formSubmit() {
     document.querySelector('#to-do-form').reset();
     document.querySelector('#to-do-form').style.display = 'none';
 
-    let aToDo = toDo(title,description,date,priority);
+    let aToDo = toDo(title, description, date, priority);
     createToDoDOM(aToDo, currentProject);
-    if (!(currentProject in projects)) {
-        projects[currentProject] = [];
-    }
-    projects[currentProject].push(aToDo);  
+    projects[currentProject].push(aToDo);
 }
+
+window.projectFormSubmit = function projectFormSubmit() {
+    let newProjTitle = document.querySelector('#project-title').value.toLowerCase();
+
+    if (!(newProjTitle in projects) && newProjTitle !== '') {
+        let newProj = document.createElement('h2');
+        newProj.className = 'sidebar-option';
+        newProj.id = newProjTitle
+        newProj.textContent = newProjTitle.toUpperCase();
+        document.querySelector('#sidebar').appendChild(newProj);
+        projects[newProjTitle] = [];
+        console.log(projects);
+
+        document.querySelector(`#${newProjTitle}`).addEventListener('click', () => {
+            document.querySelectorAll(`.${currentProject}`).forEach(toDoDOM => {
+                toDoDOM.style.display = 'none';
+            })
+            currentProject = newProjTitle;
+            document.querySelectorAll(`.${currentProject}`).forEach(toDoDOM => {
+                toDoDOM.style.display = 'grid';
+            })
+            document.querySelector('#main-area-title').textContent = currentProject.toUpperCase();
+        });
+    }
+
+    document.querySelector('#new-project-form').reset();
+    document.querySelector('#new-project-form').style.display = 'none';
+}
+
+document.querySelector('#new-project-form').setAttribute('onsubmit', 'projectFormSubmit();return false');
 document.querySelector('#to-do-form').setAttribute('onsubmit', 'formSubmit();return false');
 
-document.querySelectorAll('.sidebar-option').forEach(item => {
-    item.addEventListener('click', () => {
-        document.querySelectorAll(`.${currentProject}`).forEach(toDoDOM => {
-            toDoDOM.style.display = 'none';
-        })
-        currentProject = item.id;
-        document.querySelectorAll(`.${currentProject}`).forEach(toDoDOM => {
-            toDoDOM.style.display = 'grid';
-        })
-        document.querySelector('#main-area-title').textContent = currentProject.toUpperCase();
+document.querySelector('#home').addEventListener('click', () => {
+    document.querySelectorAll(`.${currentProject}`).forEach(toDoDOM => {
+        toDoDOM.style.display = 'none';
     })
+    currentProject = 'home';
+    document.querySelectorAll(`.${currentProject}`).forEach(toDoDOM => {
+        toDoDOM.style.display = 'grid';
+    })
+    document.querySelector('#main-area-title').textContent = currentProject.toUpperCase();
 });

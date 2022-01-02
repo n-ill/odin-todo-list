@@ -33,18 +33,21 @@ h1 {
 }
 
 h2 {
-    margin: 5vh 2vw;
+    margin: 4vh 2vw;
 }
 
-.sidebar-option:hover{
+.sidebar-option:hover, #add-project-button:hover{
     cursor: pointer;
     background-color: #363636;
 }
 
+#add-project-button {
+    text-align: center;
+}
+
 #plus-button {
     grid-row: 4/5;
-    grid-column: 2/3;
-    margin-left: 25%;
+    grid-column: 5/6;
     opacity: 87%;
 }
 
@@ -55,7 +58,7 @@ h2 {
 
 #to-do-form {
     grid-row: 3/4;
-    grid-column: 3/4;
+    grid-column: 4/5;
     display: none;
     flex-direction: column;
     background-color: #242424;
@@ -135,4 +138,23 @@ input[name=form-priority] {
 
 .date {
     grid-column: 4/5;
+}
+
+#new-project-form {
+    display: none;
+    grid-row: 4/5;
+    grid-column: 2/4;
+    margin-left: 10px;
+}
+
+.button {
+    background-color: #242424;
+    border: 3px solid #484848;
+    color: rgba(255, 255, 255, 87%);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #363636;
 }

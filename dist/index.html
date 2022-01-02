@@ -17,7 +17,7 @@
         </div>
         <div id="sidebar">
             <h2 id="home" class="sidebar-option">HOME</h2>
-            <h2 id="test" class="sidebar-option">TEST</h2>
+            <h3 id="add-project-button">ADD PROJECT</h3>
         </div>
         <img id="plus-button" src="./plus.png" alt="">
         <div id="main-area">
@@ -32,7 +32,14 @@
             <label for="low"><input type="radio" name="form-priority" id="low" value="low" required>LOW</label>
             <label for="medium"><input type="radio" name="form-priority" id="medium" value="medium">MEDIUM</label>
             <label for="high"><input type="radio" name="form-priority" id="high" value="high">HIGH</label>
-            <input type="submit" id="submit-button">
+            <input class="button" type="submit" id="submit-button">
+        </form>
+        <form id="new-project-form">
+            <input id="project-title" type="text" class="form-text-input" placeholder="Project title">
+            <div id="button-container">
+                <input id="project-submit-button" class="button" type="submit">
+                <button id="project-cancel-button" class="button">Cancel</button>
+            </div>
         </form>
     </div>
 </body>
