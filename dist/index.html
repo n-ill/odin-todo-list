@@ -16,13 +16,12 @@
             <h1>TO DO LIST</h1>
         </div>
         <div id="sidebar">
-            <div id="home">
-                <h2>HOME</h2>
-            </div>
+            <h2 id="home" class="sidebar-option">HOME</h2>
+            <h2 id="test" class="sidebar-option">TEST</h2>
         </div>
         <img id="plus-button" src="./plus.png" alt="">
         <div id="main-area">
-            <h2>HOME</h2>
+            <h2 id="main-area-title">HOME</h2>
         </div>
         <form id="to-do-form">
             <img id="x-icon" src="x-icon.png" alt="">
@@ -30,10 +29,8 @@
             <input class="form-text-input" type="text" id="form-description" placeholder="Description (optional)">
             <input type="date" id="form-date" class="form-text-input" required>
             <div style="font-size:20px;margin-bottom:10px;">PRIORITY</div>
-            <label for="low"><input type="radio" name="form-priority" id="low" value="low"
-                    required>LOW</label>
-            <label for="medium"><input type="radio" name="form-priority" id="medium"
-                    value="medium">MEDIUM</label>
+            <label for="low"><input type="radio" name="form-priority" id="low" value="low" required>LOW</label>
+            <label for="medium"><input type="radio" name="form-priority" id="medium" value="medium">MEDIUM</label>
             <label for="high"><input type="radio" name="form-priority" id="high" value="high">HIGH</label>
             <input type="submit" id="submit-button">
         </form>

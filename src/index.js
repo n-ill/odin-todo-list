@@ -16,7 +16,22 @@ window.formSubmit = function formSubmit() {
 
     let aToDo = toDo(title,description,date,priority);
     createToDoDOM(aToDo, currentProject);
+    if (!(currentProject in projects)) {
+        projects[currentProject] = [];
+    }
     projects[currentProject].push(aToDo);  
 }
-
 document.querySelector('#to-do-form').setAttribute('onsubmit', 'formSubmit();return false');
+
+document.querySelectorAll('.sidebar-option').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelectorAll(`.${currentProject}`).forEach(toDoDOM => {
+            toDoDOM.style.display = 'none';
+        })
+        currentProject = item.id;
+        document.querySelectorAll(`.${currentProject}`).forEach(toDoDOM => {
+            toDoDOM.style.display = 'grid';
+        })
+        document.querySelector('#main-area-title').textContent = currentProject.toUpperCase();
+    })
+});
