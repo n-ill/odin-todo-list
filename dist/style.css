@@ -1,6 +1,6 @@
-* { 
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
 }
 
 html {
@@ -9,88 +9,52 @@ html {
     color: rgba(255, 255, 255, 87%);
 }
 
-#grid-container {
+#main-grid-container {
     display: grid;
-    height: 100vh;
-    width: 100vw;
-    grid-template-columns: 20% 15% 40% 15% 10%;
-    grid-template-rows: 10% 15% 50% 15% 150%;
-}
-
-.icon {
-    opacity: 87%;
+    grid-template-rows: 10% 35% 45% 10%;
+    grid-template-columns: 20% 10% 30% 30% 10%;
 }
 
 #header {
-    grid-column: 1 / 6;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    grid-row: 1/2;
+    grid-column: 1/6;
     background-color: #181818;
-    padding: 10px;
+}
+
+h1 {
+    margin: 2vh 2vw;
 }
 
 #sidebar {
-    grid-row: 2 / 6;
+    grid-row: 2/5;
+    grid-column: 1/2;
     background-color: #242424;
-    padding: 5vh 2vw 2vh 2vw;
+    height: 90vh;
 }
 
-.sidebar-container {
-    display: flex;
-    align-items: center;
-    gap: 1vw;
-    font-size: 18px;
-    padding: 10px;
+h2 {
+    margin: 5vh 2vw;
 }
 
-.sidebar-container:hover {
-    cursor: pointer;
-    background-color: #363636;
-}
-
-.sidebar-text {
-    margin-top: 5px;
-}
-
-#plus-button-container {
-    grid-row: 5 / 6;
-    grid-column: 5 / 6;
+#plus-button {
+    grid-row: 4/5;
+    grid-column: 2/3;
+    margin-left: 25%;
     opacity: 87%;
 }
 
 #plus-button:hover {
     cursor: pointer;
-    opacity: 80%;
-}
-
-#main-area {
-    grid-column: 2 / 5;
-    grid-row: 2 / 5;
-    margin: 50px 25px 0px 100px;
+    opacity: 60%;
 }
 
 #to-do-form {
+    grid-row: 3/4;
+    grid-column: 3/4;
     display: none;
     flex-direction: column;
     background-color: #242424;
-    padding: 20px;
-    grid-column: 3/4;
-    grid-row: 3/4;
-}
-
-.form-text-input {
-    background-color: #242424;
-    color: rgba(255, 255, 255, 75%);
-    border: none;
-    border-bottom: 3px solid #363636;
-    width: 100%;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.form-text-input:focus {
-    outline: none;
+    padding: 10px;
 }
 
 #x-icon {
@@ -102,32 +66,41 @@ html {
 
 #x-icon:hover {
     cursor: pointer;
-    background-color: #606060;
+    background-color: #484848;
 }
 
-input[name=priority] {
-    opacity: 87%;
-}
-
-input[type=submit] {
-    width: 75px;
-    align-self: flex-end;
+.form-text-input {
     background-color: #242424;
-    border: 3px solid #484848;
-    color: rgba(255, 255, 255, 87%);
-    font-size: 16px;
-    padding: 10px;
-    cursor: pointer;
+    color: rgba(255, 255, 255, 75%);
+    border: none;
+    border-bottom: 3px solid #363636;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-input[type=submit]:hover{
-    background-color: #363636;
+.form-text-input:focus {
+    outline: none;
+}
+
+input[name=form-priority] {
+    margin-bottom: 10px;
+}
+
+#submit-button {
+    width: 25%;
+    height: 10%;
+    align-self: flex-end;
+}
+
+#main-area {
+    grid-row: 2/4;
+    grid-column: 3/5;
 }
 
 .to-do {
     background-color: #242424;
     display: grid;
-    grid-template-columns: 5% 30% 55% 10%;
+    grid-template-columns: 10% 30% 50% 10%;
     margin-bottom: 20px;
 }
 
@@ -157,7 +130,4 @@ input[type=submit]:hover{
 
 .date {
     grid-column: 4/5;
-}
-.section-title {
-    margin-bottom: 50px;
 }

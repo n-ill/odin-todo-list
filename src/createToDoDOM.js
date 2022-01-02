@@ -1,9 +1,8 @@
-function createNextToDo(currentToDo, currentProject) {
+function createToDoDOM(currentToDo, currentProject) {
     let toDo = document.createElement('div');
     toDo.className = currentProject + ' to-do';
 
     let priority = document.createElement('div');
-    priority.className = 'todo-prio';
     let title = document.createElement('div');
     title.className = 'title';
     let description = document.createElement('div');
@@ -12,13 +11,13 @@ function createNextToDo(currentToDo, currentProject) {
     date.className = 'date';
 
     if (currentToDo.getPriority() == 'low') {
-        priority.className = 'todo-prio low-prio';
+        priority.classList.add('todo-prio', 'low-prio');
     }
     if (currentToDo.getPriority() == 'medium') {
-        priority.className = 'todo-prio med-prio';
+        priority.classList.add('todo-prio', 'med-prio');
     }
     if (currentToDo.getPriority() == 'high') {
-        priority.className = 'todo-prio high-prio';
+        priority.classList.add('todo-prio', 'high-prio');
     }
 
     title.textContent = currentToDo.getTitle();
@@ -33,4 +32,4 @@ function createNextToDo(currentToDo, currentProject) {
     document.querySelector('#main-area').appendChild(toDo);
 }
 
-export { createNextToDo }
+export { createToDoDOM }

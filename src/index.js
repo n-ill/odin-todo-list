@@ -1,12 +1,10 @@
-// import { formSubmit } from './toDoForm.js';
-import { backgroundBlur } from './blurBackground.js';
-import { toDo } from './todo.js';
-import { createNextToDo } from './createToDos.js';
+import { events } from './events.js';
+import { toDo } from './toDo.js';
+import {createToDoDOM} from './createToDoDOM';
 
-let projects = {'home':[]};
+let projects = { 'home': [] };
 let currentProject = 'home';
-
-let blur = backgroundBlur();
+events();
 
 window.formSubmit = function formSubmit() {
     const title = document.querySelector('#form-title').value;
@@ -15,23 +13,10 @@ window.formSubmit = function formSubmit() {
     const priority = document.querySelector('input[name="form-priority"]:checked').value;
     document.querySelector('#to-do-form').reset();
     document.querySelector('#to-do-form').style.display = 'none';
-    blur.unblurBackground();
 
     let aToDo = toDo(title,description,date,priority);
-    createNextToDo(aToDo, currentProject);
+    createToDoDOM(aToDo, currentProject);
     projects[currentProject].push(aToDo);  
 }
 
 document.querySelector('#to-do-form').setAttribute('onsubmit', 'formSubmit();return false');
-
-document.querySelector('#plus-button').addEventListener('click', () => {
-    document.querySelector('#to-do-form').style.display = 'flex';
-    blur.blurBackground();
-});
-
-document.addEventListener('click', (e) => {
-    if (e.target && (e.target.id == 'x-icon')) {
-        document.querySelector('#to-do-form').style.display = 'none';
-        blur.unblurBackground();
-    }
-});

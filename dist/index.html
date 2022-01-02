@@ -11,51 +11,30 @@
 </head>
 
 <body>
-    <div id="grid-container">
+    <div id="main-grid-container">
         <div id="header">
-            <img class="icon" src="list-icon.png" alt="To do list icon">
-            <h1>To-Do List</h1>
+            <h1>TO DO LIST</h1>
         </div>
         <div id="sidebar">
-            <div id="home-sidebar" class="sidebar-container">
-                <img class="icon" src="home-icon.png" alt="home icon">
-                <div class="sidebar-text">HOME</div>
-            </div>
-            <div class="sidebar-container">
-                <img class="icon" src="today-icon.png" alt="today icon">
-                <div class="sidebar-text">TODAY</div>
-            </div>
-            <div class="sidebar-container">
-                <img class="icon" src="week-icon.png" alt="week icon">
-                <div class="sidebar-text">WEEK</div>
-            </div>
-            <div id="add-new-project" class="sidebar-container">
-                <div class="sidebar-text">ADD NEW PROJECT</div>
+            <div id="home">
+                <h2>HOME</h2>
             </div>
         </div>
-        <div id="plus-button-container">
-            <img id="plus-button" src="plus.png" alt="blue circle white plus button">
-        </div>
+        <img id="plus-button" src="./plus.png" alt="">
         <div id="main-area">
-            <h2 class="section-title">HOME</h2>
-            <div class="home to-do">
-                <div class="todo-prio low-prio"></div>
-                <div class="title">Appointment</div>
-                <div class="description">555 w street dr appt</div>
-                <div class="date">5/5/2022</div>
-            </div>
+            <h2>HOME</h2>
         </div>
         <form id="to-do-form">
-            <img id="x-icon" class="icon" src="./x-icon.png">
+            <img id="x-icon" src="x-icon.png" alt="">
             <input type="text" id="form-title" class="form-text-input" placeholder="Title" required>
-            <textarea id="form-description" class="form-text-input" placeholder="Description (optional)"></textarea>
+            <input class="form-text-input" type="text" id="form-description" placeholder="Description (optional)">
             <input type="date" id="form-date" class="form-text-input" required>
-            <label for="low">LOW</label>
-            <input type="radio" name="form-priority" id="low" value="low" required>
-            <label for="medium">MEDIUM</label>
-            <input type="radio" name="form-priority" id="medium" value="medium">
-            <label for="high">HIGH</label>
-            <input type="radio" name="form-priority" id="high" value="high">
+            <div style="font-size:20px;margin-bottom:10px;">PRIORITY</div>
+            <label for="low"><input type="radio" name="form-priority" id="low" value="low"
+                    required>LOW</label>
+            <label for="medium"><input type="radio" name="form-priority" id="medium"
+                    value="medium">MEDIUM</label>
+            <label for="high"><input type="radio" name="form-priority" id="high" value="high">HIGH</label>
             <input type="submit" id="submit-button">
         </form>
     </div>
