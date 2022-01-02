@@ -17,6 +17,9 @@ function submitToDoForm() {
         createToDoDOM(aToDo, currentProject);
         projects[currentProject].push(aToDo);
         localStorage.setItem('projects', JSON.stringify(projects));
+        console.log('after to do created:');
+        console.log(currentProject);
+        console.log(JSON.parse(localStorage.getItem('projects')));
     }
 
     document.querySelector('#to-do-form').setAttribute('onsubmit', 'formSubmit();return false');
